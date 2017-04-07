@@ -1,0 +1,126 @@
+Menu="UNRAID-OS"
+Title="Config File Editor"
+---
+<?
+$installedVersion = exec("/usr/local/emhttp/plugins/dynamix.plugin.manager/scripts/plugin version /var/log/plugins/ca.cfg.editor.plg");
+if ( is_file("/tmp/plugins/community.applications.plg") ) {
+  $upgradeVersion = exec("/usr/local/emhttp/plugins/dynamix.plugin.manager/scripts/plugin version /tmp/plugins/ca.cfg.editor.plg");
+} else {
+  $upgradeVersion = "0";
+}
+
+function addCfg($filename) {
+  return "<option value='$filename'>$filename</option>";
+}
+
+$o = "<option value='' selected'>Select File</option>";
+
+$dirContents = array_diff(scandir("/boot/config/"),array(".",".."));
+foreach ($dirContents as $cfg ) {
+  if ( is_dir("/boot/config/$cfg") ) {
+    continue;
+  }
+  if ( (pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) || ( $cfg == "go" ) ) {
+    $o .= addCfg("/boot/config/$cfg");
+  }
+}
+$dirContents = array_diff(scandir("/boot/config/shares/"),array(".",".."));
+foreach ($dirContents as $cfg) {
+  if ( is_dir("/boot/config/shares/$cfg") ) {
+    continue;
+  }
+  if ( pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) {
+    $o .= addCfg("/boot/config/shares/$cfg");
+  }
+}
+$dirContents = array_diff(scandir("/boot/syslinux/"),array(".",".."));
+foreach ($dirContents as $cfg) {
+  if ( is_dir("/boot/syslinux/$cfg") ) {
+    continue;
+  }
+  if ( pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) {
+    $o .= addCfg("/boot/syslinux/$cfg");
+  }
+}
+
+?>
+<script src="/webGui/javascript/jquery.filetree.js"></script>
+<script>
+var URL = '/plugins/ca.cfg.editor/include/exec.php';
+
+$(function() {
+  $('.edits').prop("disabled",true);
+  if ( "<?=$installedVersion?>" < "<?=$upgradeVersion?>" ) {
+    $('#upgradeAvailable').show();
+  }
+  $('#source').fileTreeAttach();
+});
+
+function editfile() {
+  var filename = $("#file").val();
+  $("#source").val(filename);
+  editfilemanual();
+}
+
+function editfilemanual() {
+  var filename = $("#source").val();
+  if ( ! filename ) {
+    $(".edits").prop("disabled",true);
+    return;
+  }
+  $("#editing").html(filename);
+  $.post(URL,{action:'edit',filename:filename},function(data) {
+    if (data) {
+      $("#editarea").val(data);
+      $(".edits").prop("disabled",false);
+    }
+  });
+  $("#backup").html("No Backup File Found");
+  $.post(URL,{action:'getBackup',filename:filename},function(data) {
+    if (data) {
+      $("#backup").html(data);
+    }
+  });    
+}
+
+function cancelEdit() {
+  $(".edits").prop("disabled",true);
+  $("#file").val("");
+}
+
+function saveEdits() {
+  var filename = $("#file").val();
+  if ( ! filename ) {
+    return;
+  }
+  var contents = $("#editarea").val();
+  $.post(URL,{action:'save',filename:filename,contents:contents},function(data) {
+    if (data) {
+      $(".edits").prop("disabled",true);
+    }
+  });
+}
+
+</script>
+
+<style>
+.txtdiv {display:inline-block;}
+.txtarea {resize:none;border:1px solid red;width:600px;height:300px;font-family:monospace;}
+.fileTree{width:305px;max-height:150px;overflow:scroll;position:absolute;z-index:100;display:none;}
+</style>
+<link type="text/css" rel="stylesheet" href="/webGui/styles/jquery.filetree.css">
+<span id='debugging'></span>
+<div><span id='upgradeAvailable' style='display:none'><center><font color='red'>An upgrade to this plugin is available</font></center></span></div>
+
+Select a file to edit:
+<select id='file' onchange='editfile();'><?=$o?></select> or <input type='text' id="source" name="shareFolder" value="/" data-pickroot="/"><font size='5' color='blue'><i style='vertical-align:middle;cursor:pointer;' onclick='editfilemanual();' class="fa fa-pencil-square-o" aria-hidden="true"></i></font>  (note: editing a binary file could have unintended consequences)
+<div class='txtdiv'>
+<center>Editing: <span id='editing'>No file selected</span></center>
+<textarea class='edits txtarea' id='editarea'></textarea>
+</div>
+<div class='txtdiv'>
+<center>Backup File:</center>
+<textarea class='txtarea' id='backup'disabled></textarea>
+</div>
+<input class='edits' type='button' value='Cancel' onclick='cancelEdit();'><input class='edits' type='button' value='Save' onclick='saveEdits();'>
+</div>
