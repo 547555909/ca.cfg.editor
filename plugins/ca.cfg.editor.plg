@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2017.01.28">
-<!ENTITY md5       "733352669df46e77dde4d5cdddade4e9">
+<!ENTITY version   "2017.04.06">
+<!ENTITY md5       "a34e12c4ac16c7d49d2e184f83faf36c">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
