@@ -3,7 +3,7 @@
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
 <!ENTITY version   "2017.04.06">
-<!ENTITY md5       "a34e12c4ac16c7d49d2e184f83faf36c">
+<!ENTITY md5       "482d07f31695f5b18152115c2408aa50">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
