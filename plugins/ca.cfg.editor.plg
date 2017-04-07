@@ -3,7 +3,7 @@
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
 <!ENTITY version   "2017.04.07">
-<!ENTITY md5       "ec18173dcdb5c37eadcd66f88678aea8">
+<!ENTITY md5       "53c9c8d2224bd1dc91f3a0475e169a25">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -14,7 +14,7 @@
 
 <CHANGES>
 ###2017.04.07
-- Added in /boot/config/*.conf
+- Changed: Scan entire flash drive for config files
 
 ###2017.04.06
 - Initial Release

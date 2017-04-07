@@ -17,34 +17,23 @@ function addCfg($filename) {
   return "<option value='$filename'>$filename</option>";
 }
 
+function pluginScan($filename) {
+  global $o;
+  
+  $dirContents = array_diff(scandir($filename),array(".",".."));
+  foreach ($dirContents as $cfg ) {
+    if ( is_dir("$filename/$cfg") ) {
+      pluginScan("$filename/$cfg");
+      continue;
+    }
+    if ( (pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) || (pathinfo($cfg,PATHINFO_EXTENSION) == "conf") || (pathinfo($cfg,PATHINFO_EXTENSION) == "ini") || ($cfg == "go") ) {
+      $o .= addCfg("$filename/$cfg");
+    }
+  }
+}
+
 $o = "<option value='' selected'>Select File</option>";
-$dirContents = array_diff(scandir("/boot/config/"),array(".",".."));
-foreach ($dirContents as $cfg ) {
-  if ( is_dir("/boot/config/$cfg") ) {
-    continue;
-  }
-  if ( (pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) || (pathinfo($cfg,PATHINFO_EXTENSION) == "conf") || ( $cfg == "go" ) ) {
-    $o .= addCfg("/boot/config/$cfg");
-  }
-}
-$dirContents = array_diff(scandir("/boot/config/shares/"),array(".",".."));
-foreach ($dirContents as $cfg) {
-  if ( is_dir("/boot/config/shares/$cfg") ) {
-    continue;
-  }
-  if ( pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) {
-    $o .= addCfg("/boot/config/shares/$cfg");
-  }
-}
-$dirContents = array_diff(scandir("/boot/syslinux/"),array(".",".."));
-foreach ($dirContents as $cfg) {
-  if ( is_dir("/boot/syslinux/$cfg") ) {
-    continue;
-  }
-  if ( pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) {
-    $o .= addCfg("/boot/syslinux/$cfg");
-  }
-}
+pluginScan("/boot");
 ?>
 <script src="/webGui/javascript/jquery.filetree.js"></script>
 <script>
