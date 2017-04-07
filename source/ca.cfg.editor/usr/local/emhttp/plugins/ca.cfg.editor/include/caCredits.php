@@ -25,8 +25,8 @@ $caCredits = "
     <center><table align:'center'>
       <tr>
         <td><img src='https://github.com/Squidly271/plugin-repository/raw/master/Chode_300.gif' width='50px';height='48px'></td>
-        <td><strong>Andrew Zawadzki</strong></td>
-        <td>Main Development</td>
+        <td><strong><font color='white'>Andrew Zawadzki</font></strong></td>
+        <td><font color='white'>Main Development</font></td>
       </tr>
     </table></center>
     <br>

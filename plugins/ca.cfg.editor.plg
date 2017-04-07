@@ -3,7 +3,7 @@
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
 <!ENTITY version   "2017.04.06">
-<!ENTITY md5       "482d07f31695f5b18152115c2408aa50">
+<!ENTITY md5       "cce14e107d05734efb81d6001855aafd">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,12 +13,8 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
-###2017.01.28
-- Fixed: Errors when no templates have any possibilities for cleanup
-
-###2016.11.11
+###2017.04.06
 - Initial Release
-
 </CHANGES>
 
 <FILE Run="/bin/bash">
