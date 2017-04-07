@@ -23,7 +23,7 @@ foreach ($dirContents as $cfg ) {
   if ( is_dir("/boot/config/$cfg") ) {
     continue;
   }
-  if ( (pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) || ( $cfg == "go" ) ) {
+  if ( (pathinfo($cfg,PATHINFO_EXTENSION) == "cfg" ) || (pathinfo($cfg,PATHINFO_EXTENSION) == "conf") || ( $cfg == "go" ) ) {
     $o .= addCfg("/boot/config/$cfg");
   }
 }

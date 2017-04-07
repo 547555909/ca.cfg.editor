@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2017.04.06">
-<!ENTITY md5       "cce14e107d05734efb81d6001855aafd">
+<!ENTITY version   "2017.04.07">
+<!ENTITY md5       "ec18173dcdb5c37eadcd66f88678aea8">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2017.04.07
+- Added in /boot/config/*.conf
+
 ###2017.04.06
 - Initial Release
 </CHANGES>
