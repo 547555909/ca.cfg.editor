@@ -62,7 +62,7 @@ $(function() {
     $('#credits').tooltipster({trigger: 'custom',triggerOpen: {mouseenter:true},triggerClose:{click:true,scroll:true,mouseleave:true},contentAsHTML: true,maxWidth:550,minWidth:550,animation: 'grow',triggerClose:{click:false,scroll:true,mouseleave:true},interactive: true,viewportAware: true,functionBefore: function(instance,helper) {
         var origin = $(helper.origin);
         var myID = origin.attr('id');
-        instance.content("<div style='overflow:scroll; max-height:350px; height:550px; overflow-x:hidden; overflow-y:auto;'><center><img src='/plugins/ca.cfg.editor/images/ca.cfg.editor.png' width=96px><br><font size='6' color='white'>CA Config Editor</font><br><br><?=$caCredits?></div>");
+        instance.content("<div style='overflow:scroll; max-height:350px; height:550px; overflow-x:hidden; overflow-y:auto;'><center><img src='/plugins/ca.cfg.editor/images/large.png' width=96px><br><font size='6' color='white'>CA Config Editor</font><br><br><?=$caCredits?></div>");
       }
     });  
   }
