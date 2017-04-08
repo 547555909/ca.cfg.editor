@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2017.04.07">
-<!ENTITY md5       "53c9c8d2224bd1dc91f3a0475e169a25">
+<!ENTITY version   "2017.04.07a">
+<!ENTITY md5       "14748740648e3a651e2935e8c74d1c22">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,11 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2017.04.07
+- Various GUI improvements / fixes
+- Fixed: Maintain DOS / Linux line endings on original file when saving
+- Added: Switch between DOS / Linux line endings
+
 ###2017.04.07
 - Changed: Scan entire flash drive for config files
 
