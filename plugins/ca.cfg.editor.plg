@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2017.04.07a">
-<!ENTITY md5       "14748740648e3a651e2935e8c74d1c22">
+<!ENTITY version   "2018.08.12">
+<!ENTITY md5       "0535f0f96cafb8afc47fa19a52f45217">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018.08.12
+- Don't wrap around long lines
+
 ###2017.04.07
 - Various GUI improvements / fixes
 - Fixed: Maintain DOS / Linux line endings on original file when saving
