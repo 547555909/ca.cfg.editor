@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2018.08.12">
-<!ENTITY md5       "0535f0f96cafb8afc47fa19a52f45217">
+<!ENTITY version   "2018.09.09">
+<!ENTITY md5       "98661440eaad86e220c54f45afae7d88">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018.09.09
+- Allow resize of windows
+
 ###2018.08.12
 - Don't wrap around long lines
 

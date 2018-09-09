@@ -150,7 +150,7 @@ function setFormatButton() {
 
 <style>
 .txtdiv {display:inline-block;}
-.txtarea {resize:none;border:1px solid red;width:600px;height:300px;font-family:monospace;}
+.txtarea {resize:both;border:1px solid red;width:600px;height:300px;font-family:monospace;}
 .fileTree{width:305px;max-height:150px;overflow:scroll;position:absolute;z-index:100;display:none;}
 </style>
 <link type="text/css" rel="stylesheet" href="/webGui/styles/jquery.filetree.css">
@@ -160,6 +160,7 @@ function setFormatButton() {
 <div><span id='upgradeAvailable' style='display:none'><center><font color='red'>An upgrade to this plugin is available</font></center></span></div>
 Select a file to edit:
 <select class='choosers' id='file' onchange='editfile();'><?=$o?></select> or <input class='choosers' type='text' id="source" name="shareFolder" value="/" data-pickroot="/"><font size='5' color='blue'><i style='vertical-align:middle;cursor:pointer;' onclick='editfilemanual();' class="fa fa-pencil-square-o" aria-hidden="true"></i></font>  (note: editing a binary file could have unintended consequences)<span id='spinner' style='display:none;'><img width='25px' src='/plugins/ca.cfg.editor/images/spinner2.gif'></span>
+<div width:100%;>
 <div class='txtdiv'>
 <center>Editing: <span id='editing'>No file selected</span></center>
 <textarea wrap='off' class='edits txtarea' id='editarea' oninput='$(".editButton").prop("disabled",false);'></textarea>
@@ -167,6 +168,7 @@ Select a file to edit:
 <div class='txtdiv'>
 <center>Backup File:</center>
 <textarea wrap='off' class='txtarea' id='backup' disabled></textarea>
+</div>
 </div>
 <div>
 <div id='formatLine' style='display:none;'><div class='ca_tooltip ca-switch-button-background' style='width:25px; height:11px;' onclick='toggleFormat();' title='Generally, it is not recommended to change the format'><div id='formatDiv' class='ca-switch-button-button' style='width:12px; height:11px; left:11px;'></div></div>
