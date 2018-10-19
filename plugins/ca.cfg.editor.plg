@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2018.09.09">
-<!ENTITY md5       "98661440eaad86e220c54f45afae7d88">
+<!ENTITY version   "2018.10.19">
+<!ENTITY md5       "97bd02279e15a79d8ffdb3ab933b6b9c">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018.10.19
+- Fix broken pipe
+
 ###2018.09.09
 - Allow resize of windows
 
@@ -34,7 +37,7 @@
 <FILE Run="/bin/bash">
 <INLINE>
 # Remove old 'source' files
-rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null|grep -v '&version;')
+rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null &#124; grep -v '&version;')
 </INLINE>
 </FILE>
 
