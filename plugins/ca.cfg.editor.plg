@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2018.10.19">
-<!ENTITY md5       "97bd02279e15a79d8ffdb3ab933b6b9c">
+<!ENTITY version   "2018.11.04">
+<!ENTITY md5       "2daec9d1e556e0e6be0ae9e72f4c1aef">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018.11.04
+- Fix background on file picker
+
 ###2018.10.19
 - Fix broken pipe
 
