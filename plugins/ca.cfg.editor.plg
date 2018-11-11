@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2018.11.04">
-<!ENTITY md5       "2daec9d1e556e0e6be0ae9e72f4c1aef">
+<!ENTITY version   "2018.11.11">
+<!ENTITY md5       "f60fbd0f8a8286f0833f176a2afa0247">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018.11.11
+- autov update
+
 ###2018.11.04
 - Fix background on file picker
 
