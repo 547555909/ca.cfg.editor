@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2018.11.11">
-<!ENTITY md5       "f60fbd0f8a8286f0833f176a2afa0247">
+<!ENTITY version   "2018.12.31">
+<!ENTITY md5       "5544d54ef4553d6798544a3fc7462316">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018.12.31
+- Icon was showing properly under Azure / Grey themes
+
 ###2018.11.11
 - autov update
 

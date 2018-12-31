@@ -1,6 +1,6 @@
 Menu="UNRAID-OS"
 Title="Config File Editor"
-Icon="/images/ca.cfg.editor.png"
+Icon="cogs"
 ---
 <?
 require_once("/usr/local/emhttp/plugins/ca.cfg.editor/include/caCredits.php");
