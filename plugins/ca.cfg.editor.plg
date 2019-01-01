@@ -14,7 +14,7 @@
 
 <CHANGES>
 ###2018.12.31
-- Icon was showing properly under Azure / Grey themes
+- Icon was not showing properly under Azure / Grey themes
 
 ###2018.11.11
 - autov update
