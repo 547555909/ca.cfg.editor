@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018.01.04
+- CSS Fixes
+
 ###2018.12.31
 - Icon was not showing properly under Azure / Grey themes
 

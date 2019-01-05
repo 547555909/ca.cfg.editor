@@ -1,9 +1,9 @@
 <?PHP
-####################################################
-#                                                  #
-# CA Config Editor copyright 2017, Andrew Zawadzki #
-#                                                  #
-####################################################
+#########################################################
+#                                                       #
+# CA Config Editor copyright 2017-2019, Andrew Zawadzki #
+#                                                       #
+#########################################################
 
 function readCFGfile($filename) {
   $data['contents'] = @file_get_contents($filename);

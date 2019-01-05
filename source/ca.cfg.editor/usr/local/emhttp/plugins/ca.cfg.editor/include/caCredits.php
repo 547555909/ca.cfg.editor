@@ -1,9 +1,9 @@
 <?
-####################################################
-#                                                  #
-# CA Config Editor copyright 2017, Andrew Zawadzki #
-#                                                  #
-####################################################
+#########################################################
+#                                                       #
+# CA Config Editor copyright 2017-2019, Andrew Zawadzki #
+#                                                       #
+#########################################################
 
 function getLineCount($directory) {
   global $lineCount;
@@ -30,7 +30,7 @@ $caCredits = "
       </tr>
     </table></center>
     <br>
-    <center><em><font size='1'>Copyright 2017 Andrew Zawadzki</font></em></center>
+    <center><em><font size='1'>Copyright 2017-2019 Andrew Zawadzki</font></em></center>
     <center><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7M7CBCVU732XG' target='_blank'><img src='https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif'></a></center>
     <br><center><a href='https://forums.lime-technology.com/topic/56382-plugin-ca-config-editor//' target='_blank'>Plugin Support Thread</a></center>
   ";

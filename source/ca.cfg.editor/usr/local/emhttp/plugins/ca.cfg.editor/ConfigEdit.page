@@ -152,6 +152,8 @@ function setFormatButton() {
 .txtdiv {display:inline-block;}
 .txtarea {resize:both;border:1px solid red;width:600px;height:300px;font-family:monospace;}
 .fileTree{width:305px;max-height:150px;overflow:scroll;position:absolute;z-index:100;display:none;color:initial;}
+table {background-color:transparent;}
+table tbody td {line-height:1.4rem;}
 </style>
 <link type="text/css" rel="stylesheet" href="<?=autov('/webGui/styles/jquery.filetree.css')?>">
 <link type="text/css" rel="stylesheet" href="<?=autov('/plugins/ca.cfg.editor/styles/switchbutton.css')?>">
@@ -159,7 +161,7 @@ function setFormatButton() {
 <span id='debugging'></span>
 <div><span id='upgradeAvailable' style='display:none'><center><font color='red'>An upgrade to this plugin is available</font></center></span></div>
 Select a file to edit:
-<select class='choosers' id='file' onchange='editfile();'><?=$o?></select> or <input class='choosers' type='text' id="source" name="shareFolder" value="/" data-pickroot="/"><font size='5' color='blue'><i style='vertical-align:middle;cursor:pointer;' onclick='editfilemanual();' class="fa fa-pencil-square-o" aria-hidden="true"></i></font>  (note: editing a binary file could have unintended consequences)<span id='spinner' style='display:none;'><img width='25px' src='/plugins/ca.cfg.editor/images/spinner2.gif'></span>
+<select class='choosers' id='file' onchange='editfile();'><?=$o?></select> or <input class='choosers' type='text' id="source" name="shareFolder" value="/" data-pickroot="/"><font size='5'><i style='vertical-align:middle;cursor:pointer;' onclick='editfilemanual();' class="fa fa-pencil-square-o" aria-hidden="true"></i></font>  (note: editing a binary file could have unintended consequences)<span id='spinner' style='display:none;'><img width='25px' src='/plugins/ca.cfg.editor/images/spinner2.gif'></span>
 <div width:100%;>
 <div class='txtdiv'>
 <center>Editing: <span id='editing'>No file selected</span></center>
