@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2019.01.13">
-<!ENTITY md5       "f2711b64b505ec7fd0e07187e7837cf5">
+<!ENTITY version   "2019.03.23">
+<!ENTITY md5       "b5f0c374db361a470f2c05cd77f52a17">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" icon="cogs">
 
 <CHANGES>
+###2018.03.23
+- Switch to new CA API for upgrade checks
+- Fixed: If plugin checks were never performed, update available would show
+
 ###2018.01.13
 - Update icons
 

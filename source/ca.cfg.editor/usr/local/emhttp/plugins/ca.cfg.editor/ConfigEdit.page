@@ -4,12 +4,7 @@ Icon="cogs"
 ---
 <?
 require_once("/usr/local/emhttp/plugins/ca.cfg.editor/include/caCredits.php");
-$installedVersion = exec("/usr/local/emhttp/plugins/dynamix.plugin.manager/scripts/plugin version /var/log/plugins/ca.cfg.editor.plg");
-if ( is_file("/tmp/plugins/community.applications.plg") ) {
-  $upgradeVersion = exec("/usr/local/emhttp/plugins/dynamix.plugin.manager/scripts/plugin version /tmp/plugins/ca.cfg.editor.plg");
-} else {
-  $upgradeVersion = "0";
-}
+
 $vars = parse_ini_file("/var/local/emhttp/var.ini");
 $toolTipsterAllowed = version_compare($vars['version'],"6.3.3",">=") ? "true" : "false";
 
@@ -40,10 +35,12 @@ pluginScan("/boot");
 var URL = '/plugins/ca.cfg.editor/include/exec.php';
 
 $(function() {
-  $('.edits').prop("disabled",true);
-  if ( "<?=$installedVersion?>" < "<?=$upgradeVersion?>" ) {
-    $('#upgradeAvailable').show();
+  if ( typeof caPluginUpdateCheck === "function" ) {
+    caPluginUpdateCheck("ca.cfg.editor.plg",{name:"CA Config File Editor"});
   }
+
+  $('.edits').prop("disabled",true);
+
   $('#source').fileTreeAttach();
   
   if ( "<?=$toolTipsterAllowed?>" == "true" ) {
