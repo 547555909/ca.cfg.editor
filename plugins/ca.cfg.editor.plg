@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "ca.cfg.editor">
 <!ENTITY author    "Andrew Zawadzki">
-<!ENTITY version   "2019.03.23">
-<!ENTITY md5       "b5f0c374db361a470f2c05cd77f52a17">
+<!ENTITY version   "2019.07.07">
+<!ENTITY md5       "8fa891a2a2885e7e751eb19b8abaca3b">
 <!ENTITY launch    "Tools/ConfigEdit">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "Squidly271/ca.cfg.editor">
@@ -13,7 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" icon="cogs">
 
 <CHANGES>
-###2018.03.23
+###2019.07.07
+- Add stop file to preset config files
+
+###2019.03.23
 - Switch to new CA API for upgrade checks
 - Fixed: If plugin checks were never performed, update available would show
 
